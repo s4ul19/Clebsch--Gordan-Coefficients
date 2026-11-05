@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.5cm]{geometry}
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\id}{\mathbb{I}}
+\title{Coeficientes de Clebsch--Gordan}
+\author{Saúl Nájera Allara}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Qué son los coeficientes de Clebsch--Gordan}
+
+Al sumar dos momentos angulares, $\mathbf{J}_1$ y $\mathbf{J}_2$, el espacio
+de estados es el producto tensorial
+$\mathcal{H}_{j_1}\otimes\mathcal{H}_{j_2}$. Una base natural es la
+\emph{base producto}, formada por
+$\ket{j_1,m_1}\otimes\ket{j_2,m_2}$, que distingue las proyecciones de
+ambos momentos por separado. Otra es la \emph{base acoplada},
+$\ket{J,M}$, que diagonaliza el momento angular total
+$\mathbf{J}=\mathbf{J}_1+\mathbf{J}_2$:
+\begin{equation}
+ J^2\ket{J,M}=J(J+1)\ket{J,M},\qquad
+ J_z\ket{J,M}=M\ket{J,M}.
+\end{equation}
+Aquí se adopta $\hbar=1$. 
+
+Los coeficientes de Clebsch--Gordan son las entradas de la matriz de cambio de base entre la base producto y la base acoplada.
+A cada $\ket{J,M}$ le corresponde una combinación lineal de vectores de la base producto; las amplitudes de esta superposición son los coeficientes de Clebsch--Gordan:
+\begin{equation}\label{eq:expansion}
+ \ket{J,M}=\sum_{m_1,m_2}
+ C^{JM}_{j_1m_1,j_2m_2}\,
+ \ket{j_1,m_1}\otimes\ket{j_2,m_2},\qquad
+ C^{JM}_{j_1m_1,j_2m_2}
+ =\bigl(\bra{j_1,m_1}\otimes\bra{j_2,m_2}\bigr)\ket{J,M}.
+\end{equation}
+Los valores permitidos del momento total son $J=|j_1-j_2|,|j_1-j_2|+1,\ldots,j_1+j_2$.
+
+\section{Un método para determinar los coeficientes}
+
+El cálculo consiste en construir las matrices del momento angular total
+en la base producto y encontrar sus estados propios. Se adopta el orden
+$m_1=j_1,j_1-1,\ldots,-j_1$ y
+$m_2=j_2,j_2-1,\ldots,-j_2$.
+
+\subsection{Construcción de los operadores}
+
+Para cada momento angular $j$, las matrices se determinan a partir de
+\begin{align}
+ J_z\ket{j,m}&=m\ket{j,m}, &
+ J^2\ket{j,m}&=j(j+1)\ket{j,m},\\
+ J_\pm\ket{j,m}&=\sqrt{(j\mp m)(j\pm m+1)}\ket{j,m\pm1}.
+\end{align}
+Los operadores $J_+$ y $J_-$ elevan y disminuyen la proyección $m$ en
+una unidad. Para extenderlos al espacio producto se emplean identidades
+sobre el otro subsistema; por ejemplo,
+\begin{equation}
+ J_{1z}=J_z^{(j_1)}\otimes\id_{2j_2+1},\qquad
+ J_{2z}=\id_{2j_1+1}\otimes J_z^{(j_2)}.
+\end{equation}
+De la suma $\mathbf{J}=\mathbf{J}_1+\mathbf{J}_2$ se obtiene
+\begin{align}
+ J_z&=J_{1z}+J_{2z},\qquad J_\pm=J_{1\pm}+J_{2\pm},\\
+ J^2&=J_1^2+J_2^2+2J_{1z}J_{2z}
+       +J_{1+}J_{2-}+J_{1-}J_{2+}.
+\end{align}
+
+\subsection{Identificación de los coeficientes}
+
+Las componentes de cada vector normalizado $\ket{J,M}$ en la base
+producto son los coeficientes de la ecuación~\eqref{eq:expansion}.
+En particular,
+\begin{equation}
+ C^{JM}_{j_1m_1,j_2m_2}=0\quad\text{si }m_1+m_2\neq M,
+ \qquad
+ \sum_{m_1,m_2}\left|C^{JM}_{j_1m_1,j_2m_2}\right|^2=1.
+\end{equation}
+
+Por ejemplo, para $j_1=2$ y $j_2=\tfrac12$:
+\begin{align}
+ \ket{\tfrac52,\tfrac32}
+ &=\frac{1}{\sqrt5}\ket{2,2}\otimes\ket{\tfrac12,-\tfrac12}
+   +\frac{2}{\sqrt5}\ket{2,1}\otimes\ket{\tfrac12,\tfrac12},\\
+ \ket{\tfrac32,\tfrac32}
+ &=\frac{2}{\sqrt5}\ket{2,2}\otimes\ket{\tfrac12,-\tfrac12}
+   -\frac{1}{\sqrt5}\ket{2,1}\otimes\ket{\tfrac12,\tfrac12}.
+\end{align}
+Los dos estados son ortogonales y están normalizados. Multiplicar un
+estado completo por $-1$ cambia los signos de sus coeficientes, pero
+representa el mismo estado físico.
+
+\end{document}
