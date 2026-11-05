@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[     51721,       1500]
-NotebookOptionsPosition[     50310,       1465]
-NotebookOutlinePosition[     50700,       1481]
-CellTagsIndexPosition[     50657,       1478]
+NotebookDataLength[     59087,       1721]
+NotebookOptionsPosition[     57316,       1679]
+NotebookOutlinePosition[     57707,       1695]
+CellTagsIndexPosition[     57664,       1692]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -192,8 +192,8 @@ Cell[BoxData[{
   4.002716452460836*^9, 4.0027164562374268`*^9}, {4.002886290399745*^9, 
   4.002886293544161*^9}},
  CellLabel->
-  "In[146]:=",ExpressionUUID->"15550125-90e0-4730-a43f-1009058ca3fc"]
-}, Closed]],
+  "In[258]:=",ExpressionUUID->"15550125-90e0-4730-a43f-1009058ca3fc"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -218,7 +218,7 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"j", "=", 
-    RowBox[{"3", "/", "2"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+    RowBox[{"3", "/", "2"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"JSquare", "=", 
    RowBox[{"SingleJ2", "[", "j", "]"}]}], ";"}], "\n", 
@@ -231,7 +231,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"JDown", "=", 
-    RowBox[{"SingleJkill", "[", "j", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+    RowBox[{"SingleJkill", "[", "j", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{"Grid", "[", 
   RowBox[{
    RowBox[{"{", 
@@ -440,6 +441,219 @@ Cell[BoxData[
   "Out[185]=",ExpressionUUID->"3a032adc-2786-49f8-adc3-8a0b99722073"]
 }, Open  ]]
 }, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Matrices de la suma de momento angular", "Section",
+ CellChangeTimes->{{4.0028965865517387`*^9, 
+  4.002896592819193*^9}},ExpressionUUID->"2272448b-b64c-4733-b146-\
+91b6ee55dbf8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"j1", "=", 
+   RowBox[{"1", "/", "2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"j2", "=", 
+    RowBox[{"1", "/", "2"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Identidades", " ", "de", " ", "cada", " ", "subsistema"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"id1", "=", 
+   RowBox[{"IdentityMatrix", "[", 
+    RowBox[{
+     RowBox[{"2", " ", "j1"}], "+", "1"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"id2", "=", 
+    RowBox[{"IdentityMatrix", "[", 
+     RowBox[{
+      RowBox[{"2", " ", "j2"}], "+", "1"}], "]"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Operadores", " ", "del", " ", "primer", " ", "subsistema"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J1z", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{
+     RowBox[{"SingleJz", "[", "j1", "]"}], ",", "id2"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"JSquare1", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{
+     RowBox[{"SingleJ2", "[", "j1", "]"}], ",", "id2"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"JPlus1", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{
+     RowBox[{"SingleJcreate", "[", "j1", "]"}], ",", "id2"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JDown1", "=", 
+    RowBox[{"KroneckerProduct", "[", 
+     RowBox[{
+      RowBox[{"SingleJkill", "[", "j1", "]"}], ",", "id2"}], "]"}]}], ";"}], 
+  "\n", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Operadores", " ", "del", " ", "segundo", " ", "subsistema"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"J2z", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{"id1", ",", 
+     RowBox[{"SingleJz", "[", "j2", "]"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"JSquare2", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{"id1", ",", 
+     RowBox[{"SingleJ2", "[", "j2", "]"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"JPlus2", "=", 
+   RowBox[{"KroneckerProduct", "[", 
+    RowBox[{"id1", ",", 
+     RowBox[{"SingleJcreate", "[", "j2", "]"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JDown2", "=", 
+    RowBox[{"KroneckerProduct", "[", 
+     RowBox[{"id1", ",", 
+      RowBox[{"SingleJkill", "[", "j2", "]"}]}], "]"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Operadores", " ", "totales"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JzTotal", "=", 
+    RowBox[{"J1z", "+", "J2z"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"JSquareTotal", "=", 
+    RowBox[{"Simplify", "[", 
+     RowBox[{"JSquare1", "+", "JSquare2", "+", 
+      RowBox[{"2", " ", 
+       RowBox[{"J1z", ".", "J2z"}]}], "+", 
+      RowBox[{"JPlus1", ".", "JDown2"}], "+", 
+      RowBox[{"JDown1", ".", "JPlus2"}]}], "]"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "Presentaci\[OAcute]n", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Column", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<J\.b2 total\>\"", ",", "18", ",", "Bold"}], "]"}], ",", 
+          RowBox[{"MatrixForm", "[", "JSquareTotal", "]"}]}], "}"}], ",", 
+        RowBox[{"Alignment", "->", "Center"}]}], "]"}], ",", 
+      RowBox[{"Column", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<J_z total\>\"", ",", "18", ",", "Bold"}], "]"}], ",", 
+          
+          RowBox[{"MatrixForm", "[", "JzTotal", "]"}]}], "}"}], ",", 
+        RowBox[{"Alignment", "->", "Center"}]}], "]"}]}], "}"}], "}"}], ",", 
+   RowBox[{"Alignment", "->", "Center"}], ",", 
+   RowBox[{"Spacings", "->", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "3"}], "}"}]}], ",", 
+   RowBox[{"Frame", "->", "All"}], ",", 
+   RowBox[{"ItemSize", "->", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{4.00289659888618*^9, 
+  4.0028966326382103`*^9}},ExpressionUUID->"5bca0912-4ebb-4863-9429-\
+c0c1137d359e"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {
+         StyleBox["\<\"J\.b2 total\"\>",
+          StripOnInput->False,
+          FontSize->18,
+          FontWeight->Bold]},
+        {
+         TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+             {"2", "0", "0", "0"},
+             {"0", "1", "1", "0"},
+             {"0", "1", "1", "0"},
+             {"0", "0", "0", "2"}
+            },
+            
+            GridBoxAlignment->{
+             "Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.7]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}], "\[NoBreak]", ")"}],
+          Function[BoxForm`e$, 
+           MatrixForm[BoxForm`e$]]]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Center}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox["\<\"Jz total\"\>",
+          StripOnInput->False,
+          FontSize->18,
+          FontWeight->Bold]},
+        {
+         TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+             {"1", "0", "0", "0"},
+             {"0", "0", "0", "0"},
+             {"0", "0", "0", "0"},
+             {"0", "0", "0", 
+              RowBox[{"-", "1"}]}
+            },
+            
+            GridBoxAlignment->{
+             "Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.7]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.4]}, 
+                Offset[0.2]}}], "\[NoBreak]", ")"}],
+          Function[BoxForm`e$, 
+           MatrixForm[BoxForm`e$]]]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Center}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
+   },
+   AutoDelete->False,
+   ColumnsEqual->True,
+   GridBoxAlignment->{"Columns" -> {{Center}}},
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{},
+   GridBoxSpacings->{"Columns" -> {{4}}, "Rows" -> {{3}}},
+   RowsEqual->True],
+  "Grid"]], "Output",
+ CellChangeTimes->{{4.0028966050664682`*^9, 4.0028966152183523`*^9}},
+ CellLabel->
+  "Out[291]=",ExpressionUUID->"f6373707-9080-4719-bfd6-453819c8cf07"]
+}, Open  ]]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1460,10 +1674,10 @@ Cell[BoxData[
  CellLabel->
   "Out[257]=",ExpressionUUID->"79322682-6f58-4f5e-939b-4c497d359a9e"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]]
 },
-WindowSize->{734, 821},
+WindowSize->{1470, 821},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (July 2, 2026)",
 StyleDefinitions->"Default.nb",
@@ -1485,24 +1699,33 @@ Cell[576, 22, 175, 3, 96, "Title",ExpressionUUID->"183ebd09-4686-4b65-965e-39ec5
 Cell[754, 27, 939, 19, 114, "Text",ExpressionUUID->"5196711f-2a94-4ef8-8f83-7bedc4eafca5"],
 Cell[CellGroupData[{
 Cell[1718, 50, 154, 3, 66, "Section",ExpressionUUID->"4d1ff4ed-4b7c-44da-9f3e-3123ddb195b9"],
-Cell[1875, 55, 4652, 139, 254, "Input",ExpressionUUID->"15550125-90e0-4730-a43f-1009058ca3fc"]
-}, Closed]],
+Cell[1875, 55, 4652, 139, 131, "Input",ExpressionUUID->"15550125-90e0-4730-a43f-1009058ca3fc"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[6564, 199, 482, 13, 52, "Section",ExpressionUUID->"3e35d476-2c91-4223-a7ab-2f482fc6fe45"],
+Cell[6564, 199, 482, 13, 66, "Section",ExpressionUUID->"3e35d476-2c91-4223-a7ab-2f482fc6fe45"],
 Cell[CellGroupData[{
-Cell[7071, 216, 2458, 67, 254, "Input",ExpressionUUID->"3e6fa5d5-3b1a-4220-9f86-a3b6adcede56"],
-Cell[9532, 285, 5158, 154, 325, "Output",ExpressionUUID->"3a032adc-2786-49f8-adc3-8a0b99722073"]
+Cell[7071, 216, 2461, 68, 254, "Input",ExpressionUUID->"3e6fa5d5-3b1a-4220-9f86-a3b6adcede56"],
+Cell[9535, 286, 5158, 154, 325, "Output",ExpressionUUID->"3a032adc-2786-49f8-adc3-8a0b99722073"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[14739, 445, 875, 24, 52, "Section",ExpressionUUID->"b47d0cc0-d60b-43b8-a448-903b0f754876"],
+Cell[14742, 446, 185, 3, 52, "Section",ExpressionUUID->"2272448b-b64c-4733-b146-91b6ee55dbf8"],
 Cell[CellGroupData[{
-Cell[15639, 473, 18978, 507, 1806, "Input",ExpressionUUID->"bef42a13-18e4-41c2-ba71-4a4ed5ce030e"],
-Cell[34620, 982, 15650, 478, 502, "Output",ExpressionUUID->"79322682-6f58-4f5e-939b-4c497d359a9e"]
+Cell[14952, 453, 4122, 121, 560, "Input",ExpressionUUID->"5bca0912-4ebb-4863-9429-c0c1137d359e"],
+Cell[19077, 576, 2619, 77, 142, "Output",ExpressionUUID->"f6373707-9080-4719-bfd6-453819c8cf07"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21745, 659, 875, 24, 66, "Section",ExpressionUUID->"b47d0cc0-d60b-43b8-a448-903b0f754876"],
+Cell[CellGroupData[{
+Cell[22645, 687, 18978, 507, 1806, "Input",ExpressionUUID->"bef42a13-18e4-41c2-ba71-4a4ed5ce030e"],
+Cell[41626, 1196, 15650, 478, 502, "Output",ExpressionUUID->"79322682-6f58-4f5e-939b-4c497d359a9e"]
 }, Open  ]]
+}, Closed]]
 }, Open  ]]
 }
 ]
 *)
+
+(* End of internal cache information *)
 
