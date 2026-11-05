@@ -1,0 +1,6 @@
+# Ignorar todo salvo PDF, notebooks y este archivo.
+*
+!*/
+!*.pdf
+!*.nb
+!.gitignore
